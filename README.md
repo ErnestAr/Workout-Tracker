@@ -1,7 +1,5 @@
-# Notetaker
- "Note Taker" Application
-
-
+# Workout Tracker
+ Workout Tracker Application
 
 ## Table of Contents
 - [Screeenshots](#screenshots)
