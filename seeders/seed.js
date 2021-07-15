@@ -1,11 +1,15 @@
 const mongoose = require('mongoose');
 const workoutDB = require('../models/Workout');
 
-mongoose.connect('mongodb://localhost/workout', {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 const workoutSeed = [
   {
