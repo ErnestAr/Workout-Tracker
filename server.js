@@ -32,7 +32,7 @@ app.get("/api/workouts", (req, res) => {
 // Put (add exercise)
 app.put("/api/workouts/:id", ({body}, res) => {
   workoutDB.create(body)
-    .then(({_id}) => workoutDB.findOneAndUpdate({}, { $push: { books: _id } }, { new: true }))
+    .then(({_id}) => workoutDB.findOneAndUpdate({}, { $push: { exercises: _id } }, { new: true }))
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
@@ -43,12 +43,12 @@ app.put("/api/workouts/:id", ({body}, res) => {
 
 // Post (create workout)
 app.post("/api/workouts", ({body}, res) => {
-  workoutDB.Book.create(body)
-    .then(({_id}) => workoutDB.findOneAndUpdate({}, { $push: { books: _id } }, { new: true }))
+  workoutDB.create(body)
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
     .catch(err => {
+      console.log(err);
       res.json(err);
     });
 });
