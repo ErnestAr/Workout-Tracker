@@ -5,7 +5,7 @@
 
 ## Table of Contents
 - [Screeenshots](#screenshots)
-- [Deployed-Link](#deployed-link)
+- [Deployed-Application](#deployed-application)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
